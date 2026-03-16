@@ -83,25 +83,42 @@ npx -y -p screenlook screenlook-mcp
 
 ## Just Talk
 
-Once installed, no commands to remember. Just talk in plain English:
+Once installed, no commands to remember. Just describe what you see or what you want — in plain English.
 
-```
-You: "look at my screen"
-Agent: *captures your phone screen* "I can see the login page. The button
-       is overlapping the text field. Let me fix the styles..."
+### Fix UI bugs without describing them
 
-You: "is it fixed now?"
-Agent: *captures again* "Yes, the button is properly spaced now."
+> **You:** "look at my screen, the login button is behind the keyboard"
+>
+> **Agent:** *captures screen* "I see it — the button isn't in a ScrollView so it gets hidden when the keyboard opens. Fixing..."
 
-You: "check both my phone and emulator"
-Agent: *captures both devices* "Phone looks good. The emulator has a
-       slight overflow on the card component, let me fix..."
+### Change styles visually
 
-You: "compare before and after, I'm changing the header"
-Agent: *captures before, waits for hot reload, captures after*
-       "The new blue header looks good but the white text is low contrast.
-       Try #1E40AF instead."
-```
+> **You:** "check my phone — make the header red and the font bigger"
+>
+> **Agent:** *captures screen* "Got it. The header is currently #3B82F6 (blue) with 16px font. Changing to red and bumping to 20px..."
+>
+> **You:** "look again"
+>
+> **Agent:** *captures screen* "Done — red header with larger font looks good. Want me to adjust the shade?"
+
+### Debug layout issues
+
+> **You:** "the card component looks weird on my phone, can you see it?"
+>
+> **Agent:** *captures screen* "I can see the issue — the card is overflowing off the right edge. The padding is 24px but the card width is set to 100vw. Changing to 100%..."
+
+### Compare before and after
+
+> **You:** "I'm about to change the nav bar, compare before and after"
+>
+> **Agent:** *captures before, waits for hot reload, captures after*
+> "The new bottom nav looks cleaner. But the icons are slightly misaligned — the home icon is 2px lower than the others. Let me fix..."
+
+### Test across devices
+
+> **You:** "does it look right on both my phone and the emulator?"
+>
+> **Agent:** *captures both* "Pixel 7 looks perfect. On the emulator the text is clipping on smaller screen — adding `numberOfLines` prop to fix..."
 
 ## CLI (Alternative)
 
