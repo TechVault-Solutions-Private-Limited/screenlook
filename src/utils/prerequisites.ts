@@ -28,6 +28,7 @@ export async function runDoctorChecks(): Promise<CheckResult[]> {
   const checks = await Promise.all([
     checkBinary('adb', ['version'], 'Android Debug Bridge (adb)'),
     checkBinary('xcrun', ['--version'], 'Xcode Command Line Tools (xcrun)'),
+    checkBinary('pymobiledevice3', ['version'], 'pymobiledevice3 (iOS 17+)'),
     checkBinary('idevicescreenshot', ['--help'], 'libimobiledevice (idevicescreenshot)'),
   ]);
   return checks;
