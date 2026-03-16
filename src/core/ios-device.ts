@@ -17,7 +17,7 @@ export async function captureIOSDevice(device: Device): Promise<CaptureResult> {
   try {
     await execFile(
       'pymobiledevice3',
-      ['developer', 'dvt', 'screenshot', tmpPath, '--udid', device.id],
+      ['developer', 'dvt', 'screenshot', tmpPath, '--tunnel', device.id],
       { timeout: 30_000 }
     );
     captured = true;
