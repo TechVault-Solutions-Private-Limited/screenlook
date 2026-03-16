@@ -4,7 +4,7 @@
 
 ScreenLook captures screenshots from physical devices and emulators, then pipes them into your AI coding agent for visual feedback. Instead of the screenshot-to-chat dance, just say **"look at my screen"** and your agent sees it.
 
-Works with Claude Code, Cursor, VS Code Copilot, Windsurf, and any MCP-compatible tool.
+Works with Claude Code, Cursor, VS Code Copilot, Antigravity, and any MCP-compatible tool.
 
 ## Quick Start
 
@@ -50,9 +50,12 @@ Add to `.vscode/mcp.json` in your project:
 }
 ```
 
-### Windsurf
+### Antigravity
 
-Add to `~/.codeium/windsurf/mcp_config.json`:
+Add to your MCP config (Menu > MCP > Manage MCP Server > View raw config):
+
+- **macOS:** `~/.gemini/antigravity/mcp_config.json`
+- **Windows:** `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
 
 ```json
 {
