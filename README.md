@@ -140,13 +140,28 @@ npx screenlook doctor            # Check prerequisites
 | Android phone/tablet | Windows, macOS, Linux | USB + `adb` |
 | Android emulator | Windows, macOS, Linux | `adb` (auto-detected) |
 | iOS Simulator | macOS only | `xcrun simctl` |
-| iOS physical | macOS only | `pymobiledevice3` or `idevicescreenshot` |
+| iOS physical | macOS only | `pymobiledevice3` (iOS 17+) |
 
 ## Prerequisites
 
 - **Android:** [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools) — `adb` must be in your PATH
 - **iOS Simulator:** Xcode installed (macOS only)
-- **iOS Physical (iOS 17+):** `pip3 install pymobiledevice3` (recommended) or `brew install libimobiledevice` (v1.4.0+)
+
+### iOS Physical Device (iOS 17+)
+
+Apple removed the legacy screenshot service in iOS 17. You need `pymobiledevice3` which uses Apple's CoreDevice protocol:
+
+```bash
+# Install
+pip3 install pymobiledevice3
+
+# Start the tunnel (requires sudo, keep this running)
+sudo pymobiledevice3 remote tunneld
+```
+
+Leave the tunnel running in a terminal. Then screenlook captures work automatically — just say "look at my screen".
+
+> **Why sudo?** Apple's CoreDevice protocol requires creating a virtual network interface (TUN/TAP), which needs root privileges. The tunnel runs locally — no data leaves your machine.
 
 Run `screenlook doctor` to verify your setup.
 

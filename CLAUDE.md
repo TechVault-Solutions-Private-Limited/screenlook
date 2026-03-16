@@ -60,15 +60,15 @@ It ships as both a CLI (`npx screenlook`) and an MCP server (`screenlook-mcp`).
 - **Capture:** `xcrun simctl io <device-udid> screenshot <path>.png`
 - **Note:** Only works on macOS with Xcode installed
 
-### iOS Physical Device
-- **Primary:** `pymobiledevice3 developer dvt screenshot <path> --udid <udid>`
-  - Requires: `pip3 install pymobiledevice3`
-  - Works with iOS 17+ using CoreDevice APIs
-  - May need: `pymobiledevice3 mounter auto-mount` on first use
-- **Fallback:** `idevicescreenshot` via libimobiledevice
-  - Requires: `brew install libimobiledevice` (v1.4.0+ for iOS 17+)
+### iOS Physical Device (iOS 17+)
+- **Requires:** `sudo pymobiledevice3 remote tunneld` running in background
+  - Creates CoreDevice QUIC tunnel (needs sudo for TUN/TAP interface)
+  - Must stay running while using screenlook
+- **Capture:** `pymobiledevice3 developer dvt screenshot <path> --tunnel <udid>`
+  - Tries `pymobiledevice3` binary, then `python3 -m pymobiledevice3`, then `/opt/homebrew/bin/python3 -m pymobiledevice3`
+- **Fallback:** `idevicescreenshot` for pre-iOS 17 devices
 - **Note:** `xcrun devicectl` does NOT have a screenshot subcommand
-- **Strategy:** Try `pymobiledevice3` first, fall back to `idevicescreenshot`
+- **Note:** `idevicescreenshot` is broken for iOS 17+ (Apple removed `screenshotr` service)
 
 ## Commands & Tools
 
