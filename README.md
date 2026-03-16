@@ -140,13 +140,13 @@ npx screenlook doctor            # Check prerequisites
 | Android phone/tablet | Windows, macOS, Linux | USB + `adb` |
 | Android emulator | Windows, macOS, Linux | `adb` (auto-detected) |
 | iOS Simulator | macOS only | `xcrun simctl` |
-| iOS physical | macOS only | `xcrun devicectl` |
+| iOS physical | macOS only | `pymobiledevice3` or `idevicescreenshot` |
 
 ## Prerequisites
 
 - **Android:** [Android SDK Platform Tools](https://developer.android.com/tools/releases/platform-tools) — `adb` must be in your PATH
 - **iOS Simulator:** Xcode installed (macOS only)
-- **iOS Physical:** Xcode 15+ with device paired/trusted (macOS only)
+- **iOS Physical (iOS 17+):** `pip3 install pymobiledevice3` (recommended) or `brew install libimobiledevice` (v1.4.0+)
 
 Run `screenlook doctor` to verify your setup.
 
