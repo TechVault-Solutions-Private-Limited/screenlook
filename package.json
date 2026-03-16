@@ -1,6 +1,6 @@
 {
   "name": "screenlook",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "Give Claude Code eyes — capture device screens for AI-assisted mobile development",
   "bin": {
     "screenlook": "./bin/screenlook.js",
