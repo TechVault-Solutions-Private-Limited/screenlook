@@ -4,17 +4,19 @@ import { devicesCommand } from './commands/devices.js';
 import { watchCommand } from './commands/watch.js';
 import { diffCommand } from './commands/diff.js';
 import { doctorCommand } from './commands/doctor.js';
+import { setupCommand } from './commands/setup.js';
 
 const program = new Command()
   .name('screenlook')
   .description('Give Claude Code eyes — capture device screens for AI feedback')
-  .version('0.1.0');
+  .version('0.1.3');
 
 program.addCommand(lookCommand);
 program.addCommand(devicesCommand);
 program.addCommand(watchCommand);
 program.addCommand(diffCommand);
 program.addCommand(doctorCommand);
+program.addCommand(setupCommand);
 
 // Default to 'look' if no command specified
 program.action(async () => {

@@ -10,19 +10,25 @@ Works with Claude Code, Cursor, VS Code Copilot, Antigravity, and any MCP-compat
 
 ```bash
 npm install -g screenlook
+screenlook setup
 ```
 
-Then add it to your tool of choice:
+That's it. `setup` auto-detects your installed IDEs and configures ScreenLook for all of them. Restart your IDE and start talking.
 
-### Claude Code
+Supports: **Claude Code**, **Cursor**, **VS Code (Copilot)**, **Antigravity**, and any MCP-compatible tool.
+
+<details>
+<summary>Manual setup (if you prefer)</summary>
+
+#### Claude Code
 
 ```bash
 claude mcp add screenlook -- screenlook-mcp
 ```
 
-### Cursor
+#### Cursor
 
-Add to `.cursor/mcp.json` in your project (or global config):
+Add to `.cursor/mcp.json`:
 
 ```json
 {
@@ -35,9 +41,9 @@ Add to `.cursor/mcp.json` in your project (or global config):
 }
 ```
 
-### VS Code (GitHub Copilot)
+#### VS Code (GitHub Copilot)
 
-Add to `.vscode/mcp.json` in your project:
+Add to `.vscode/mcp.json`:
 
 ```json
 {
@@ -50,12 +56,9 @@ Add to `.vscode/mcp.json` in your project:
 }
 ```
 
-### Antigravity
+#### Antigravity
 
-Add to your MCP config (Menu > MCP > Manage MCP Server > View raw config):
-
-- **macOS:** `~/.gemini/antigravity/mcp_config.json`
-- **Windows:** `%USERPROFILE%\.gemini\antigravity\mcp_config.json`
+Add to `~/.gemini/antigravity/mcp_config.json` (macOS) or `%USERPROFILE%\.gemini\antigravity\mcp_config.json` (Windows):
 
 ```json
 {
@@ -68,15 +71,13 @@ Add to your MCP config (Menu > MCP > Manage MCP Server > View raw config):
 }
 ```
 
-### Any MCP-Compatible Tool
-
-ScreenLook is a standard MCP server over stdio. The command to run it:
+#### Any MCP-Compatible Tool
 
 ```bash
 npx -y -p screenlook screenlook-mcp
 ```
 
-Add this to whatever MCP config your tool uses.
+</details>
 
 ---
 
