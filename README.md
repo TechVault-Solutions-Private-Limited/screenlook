@@ -15,6 +15,8 @@ screenlook setup
 
 That's it. `setup` auto-detects your installed IDEs and configures ScreenLook for all of them. Restart your IDE and start talking.
 
+*(Using a physical iOS 17+ device? See the [iOS 17+ Setup](#ios-physical-device-ios-17) instructions first).*
+
 Supports: **Claude Code**, **Cursor**, **VS Code (Copilot)**, **Antigravity**, and any MCP-compatible tool.
 
 <details>
