@@ -24,8 +24,10 @@ export const doctorCommand = new Command('doctor')
         );
       } else if (check.name.includes('xcrun')) {
         console.log('  Install xcrun: xcode-select --install (macOS only)');
-      } else if (check.name.includes('pymobiledevice3')) {
+      } else if (check.name.includes('pymobiledevice3 (iOS 17+)')) {
         console.log('  Install: pip3 install pymobiledevice3 (recommended for iOS 17+ physical devices)');
+      } else if (check.name.includes('Tunnel Service')) {
+        console.log("  Start tunnel: sudo pymobiledevice3 remote tunneld --protocol tcp --daemonize");
       } else if (check.name.includes('idevicescreenshot')) {
         console.log('  Install: brew install libimobiledevice (macOS, needs v1.4.0+ for iOS 17+)');
       }
