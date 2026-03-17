@@ -1,7 +1,7 @@
 {
   "name": "screenlook",
   "version": "0.4.1",
-  "description": "Give Claude Code eyes — capture device screens for AI-assisted mobile development",
+  "description": "Give your AI coding agent eyes. Capture iOS and Android device screens via MCP — works with Claude Code, Cursor, VS Code Copilot, and Antigravity.",
   "bin": {
     "screenlook": "./bin/screenlook.js",
     "screenlook-mcp": "./bin/screenlook-mcp.js"
@@ -15,15 +15,39 @@
     "prepublishOnly": "npm run build"
   },
   "keywords": [
-    "claude-code",
     "mcp",
+    "model-context-protocol",
     "screenshot",
     "mobile",
-    "adb",
     "ios",
+    "android",
+    "adb",
+    "claude-code",
+    "cursor",
+    "copilot",
+    "antigravity",
     "developer-tools",
+    "device-capture",
+    "pymobiledevice3",
+    "xcrun",
+    "react-native",
+    "expo",
+    "flutter",
+    "ai-coding",
     "vibe-coding"
   ],
+  "author": {
+    "name": "TechVault Solutions",
+    "url": "https://github.com/TechVault-Solutions-Private-Limited"
+  },
+  "homepage": "https://github.com/TechVault-Solutions-Private-Limited/screenlook#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechVault-Solutions-Private-Limited/screenlook.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TechVault-Solutions-Private-Limited/screenlook/issues"
+  },
   "files": [
     "dist",
     "bin",
