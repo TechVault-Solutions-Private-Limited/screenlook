@@ -66,9 +66,9 @@ export async function captureIOSDevice(device: Device): Promise<CaptureResult> {
   if (!captured) {
     throw new Error(
       `Could not capture screenshot from iOS device ${device.id}.\n\n` +
-        'For iOS 17+ physical devices, you need pymobiledevice3 with tunneld running:\n\n' +
+        'For iOS 17+ physical devices, you need pymobiledevice3 with a TCP tunneld running:\n\n' +
         '  1. Install: pip3 install pymobiledevice3\n' +
-        '  2. Start tunnel (keep running): sudo pymobiledevice3 remote tunneld\n' +
+        '  2. Start tunnel in the background: sudo pymobiledevice3 remote tunneld --protocol tcp --daemonize\n' +
         '  3. Then screenlook will work automatically\n\n' +
         'For older iOS: brew install libimobiledevice\n' +
         'Run `screenlook doctor` for more details.'
