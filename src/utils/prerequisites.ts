@@ -38,6 +38,7 @@ export async function checkTunnel(): Promise<CheckResult> {
       resolve({ ok: false, name: 'iOS 17+ Tunnel Service', message: 'Not running' });
     });
     socket.on('error', () => {
+      socket.destroy();
       resolve({ ok: false, name: 'iOS 17+ Tunnel Service', message: "Stopped - Run 'sudo pymobiledevice3 remote tunneld --protocol tcp --daemonize'" });
     });
     socket.connect(49151, '127.0.0.1');
