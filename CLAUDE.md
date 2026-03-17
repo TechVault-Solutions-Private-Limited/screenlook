@@ -61,8 +61,8 @@ It ships as both a CLI (`npx screenlook`) and an MCP server (`screenlook-mcp`).
 - **Note:** Only works on macOS with Xcode installed
 
 ### iOS Physical Device (iOS 17+)
-- **Requires:** `sudo pymobiledevice3 remote tunneld` running in background
-  - Creates CoreDevice QUIC tunnel (needs sudo for TUN/TAP interface)
+- **Requires:** `sudo pymobiledevice3 remote tunneld --protocol tcp --daemonize` running in background
+  - Creates CoreDevice TCP tunnel (needs sudo for TUN/TAP interface)
   - Must stay running while using screenlook
 - **Capture:** `pymobiledevice3 developer dvt screenshot <path> --tunnel <udid>`
   - Tries `pymobiledevice3` binary, then `python3 -m pymobiledevice3`, then `/opt/homebrew/bin/python3 -m pymobiledevice3`
